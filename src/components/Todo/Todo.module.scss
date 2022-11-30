@@ -1,0 +1,60 @@
+@import "utilities/variables";
+.todo {
+    position: relative;
+    width: 100%;
+    background-color: $placeholder-color;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    gap: 10px;
+}
+.checked {
+    transition: opacity 0.3s;
+    opacity: 0.5;
+    .label::before {
+        width: 100%;
+    }
+}
+.label {
+    position: relative;
+    color: $text-color;
+
+    display: inline-block; /* so height and width actually take affect */
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+    &::before {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 2px;
+        background-color: $text-color;
+        position: absolute;
+        top: 14px;
+        transition: linear width 0.3s;
+    }
+}
+.checkAndLabel {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+    gap: 10px;
+}
+.delete {
+    position: absolute;
+    right: 10px;
+    color: $text-color;
+
+    cursor: pointer;
+    transition: ease color 0.2s;
+    &:hover {
+        color: $danger-color;
+    }
+}

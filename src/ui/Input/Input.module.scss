@@ -1,0 +1,65 @@
+@import "utilities/variables";
+@mixin placeholder-color($color, $focus) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        &:focus {
+            &::-webkit-input-placeholder {
+                /* WebKit, Blink, Edge */
+                color: $focus;
+            }
+        }
+    }
+    &:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: $color;
+        opacity: 1;
+        &:focus {
+            &:-moz-placeholder {
+                /* Mozilla Firefox 4 to 18 */
+                color: $focus;
+                opacity: 1;
+            }
+        }
+    }
+    &::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: $color;
+        opacity: 1;
+        &:focus {
+            &::-moz-placeholder {
+                /* Mozilla Firefox 19+ */
+                color: $focus;
+                opacity: 1;
+            }
+        }
+    }
+    &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $color;
+        &:focus {
+            &:-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                color: $focus;
+            }
+        }
+    }
+}
+@mixin remove-border {
+    border: none;
+    &:focus,
+    :focus-visible {
+        border: none;
+        outline: none;
+    }
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+
+    color: $text-color;
+    background-color: $background-color;
+
+    @include remove-border();
+    @include placeholder-color($placeholder-color, $placeholder-color);
+}

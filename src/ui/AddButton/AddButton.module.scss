@@ -1,0 +1,29 @@
+@import "utilities/variables";
+
+.button {
+    background-color: $background-color;
+
+    padding: 0;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    &:hover {
+        .plus {
+            color: lighten($primary-color, 10%);
+        }
+    }
+}
+.plus {
+    // width: 100%;
+    height: 100%;
+    width: 30px;
+    max-width: 30px;
+    color: $primary-color;
+    transition: ease color 0.2s;
+}
