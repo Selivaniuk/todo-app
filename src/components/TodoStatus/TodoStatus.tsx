@@ -21,8 +21,9 @@ const TodoStatus: React.FC<{ todos: TodoType[] }> = ({ todos }) => {
   return (
     <div className={styles.status}>
       <p>
-        {checkedTodos.length}/{todos.length}
-        Выполнено {getEmojiByPercent(percentage)}
+        {`${checkedTodos.length}/${todos.length} Выполнено ${getEmojiByPercent(
+          percentage
+        )}`}
       </p>
     </div>
   );
