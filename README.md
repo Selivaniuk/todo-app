@@ -14,7 +14,7 @@ https://selivaniuk.github.io/todo-app
 Время выполнения: 5ч.
 
 
-# Dev
+## Dev
 
 1. Install deps: 
    ```bash
@@ -25,3 +25,8 @@ https://selivaniuk.github.io/todo-app
    ```bash
    npm start
    ```
+
+
+## Резюме [тут](https://selivaniuk.github.io/resume)
+
+https://selivaniuk.github.io/resume
